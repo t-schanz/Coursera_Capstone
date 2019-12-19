@@ -1,14 +1,13 @@
-
+version: '3'
 services:
   notebook:
     build: .
     volumes:
-      - cd:/home/jovyan/work
+      - ./:/home/jovyan/work
     ports:
-      - "8888:8888"
+      - '8888:8888'
     environment:
       - JUPYTER_LAB_ENABLE=yes
-    command: "start.sh jupyter lab"
-
-volumes:
-  cd:
+    command: 'start.sh jupyter lab'
+    env_file:
+      - C:/Users/toma/Documents/Foursquare_creds.txt
